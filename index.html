@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1b2a" />
+    <title>Scorebook — CWA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Scorebook home">
+          <img class="brand-mark" src="scorebook-logo.png" alt="" />
+          <span class="myown"><span class="myown1">Score</span>book</span>
+        </a>
+        <div class="topbar-actions">
+          <span class="save-status" id="save-status">All changes saved</span>
+          <button class="icon-button" id="reset-button" title="Reset calculator" aria-label="Reset calculator">↺</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Academic performance tracker</p>
+          <h1 class="know">Know where you stand.</h1>
+          <p class="hero-copy">Add your courses and scores to calculate semester WAs, cumulative CWA, and your current class division.</p>
+        </div>
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          <span>100-point scale</span>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Academic summary">
+        <article class="summary-card summary-primary">
+          <div class="card-label">Cumulative CWA</div>
+          <div class="metric-line"><strong id="cwa-value">0.00</strong><span>/ 100</span></div>
+          <div class="division-pill" id="division-value">Add courses to begin</div>
+          <div class="progress-track"><div class="progress-fill" id="cwa-progress"></div></div>
+        </article>
+        <article class="summary-card">
+          <div class="card-label">Total credits</div>
+          <strong class="metric-small" id="credits-value">0</strong>
+          <span class="metric-caption">credits attempted</span>
+        </article>
+        <article class="summary-card">
+          <div class="card-label">Courses added</div>
+          <strong class="metric-small" id="courses-value">0</strong>
+          <span class="metric-caption">across all semesters</span>
+        </article>
+        <article class="summary-card">
+          <div class="card-label">Best semester</div>
+          <strong class="metric-small" id="best-semester-value">—</strong>
+          <span class="metric-caption" id="best-semester-caption">Your strongest WA</span>
+        </article>
+      </section>
+
+      <div class="workspace">
+        <section class="calculator-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Your academic record</p>
+              <h2>Semester results</h2>
+            </div>
+            <button class="button button-dark" id="add-semester-button"><span>+</span> Add semester</button>
+          </div>
+          <div id="semesters-container"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <div class="empty-icon">+</div>
+            <h3>No semesters yet</h3>
+            <p>Add a semester to start calculating your results.</p>
+            <button class="button button-dark" id="empty-add-button">Add first semester</button>
+          </div>
+        </section>
+
+        <aside class="guide-panel">
+          <div class="guide-header"><span class="guide-icon">i</span><h2>How it works</h2></div>
+          <div class="guide-step"><span>01</span><div><strong>Enter your courses</strong><p>Add each course, its credit hours and score.</p></div></div>
+          <div class="guide-step"><span>02</span><div><strong>Check your WA</strong><p>Each semester is weighted by credit hours.</p></div></div>
+          <div class="guide-step"><span>03</span><div><strong>Track your CWA</strong><p>Your cumulative score includes every course.</p></div></div>
+          <div class="division-guide">
+            <div class="guide-title">Class divisions</div>
+            <div class="division-row"><span class="dot first"></span><span>First Class</span><strong>70–100</strong></div>
+            <div class="division-row"><span class="dot upper"></span><span>Second Upper</span><strong>60–69</strong></div>
+            <div class="division-row"><span class="dot lower"></span><span>Second Lower</span><strong>50–59</strong></div>
+            <div class="division-row"><span class="dot third"></span><span>Third Class</span><strong>45–49</strong></div>
+            <div class="division-row"><span class="dot pass"></span><span>Pass</span><strong>40–44</strong></div>
+          </div>
+        </aside>
+      </div>
+      <footer>Scorebook <span>•</span> Your results are saved locally in this browser.</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
